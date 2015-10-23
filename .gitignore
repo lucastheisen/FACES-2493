@@ -1,0 +1,26 @@
+# Vi
+*~
+.*.swp
+ 
+# Eclipse
+/.classpath
+/.metadata
+/.project
+/.settings
+/target
+ 
+# Maven release plugin
+/pom.xml.releaseBackup
+/release.properties
+ 
+# Maven multi-module in eclipse
+/**/.classpath
+/**/.metadata
+/**/.project
+/**/.settings
+/**/target
+/**/pom.xml.releaseBackup
+/**/release.properties
+ 
+# JRebel
+rebel.xml

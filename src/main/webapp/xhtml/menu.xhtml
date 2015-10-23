@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:ui="http://java.sun.com/jsf/facelets"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:portlet="http://java.sun.com/portlet_2_0"
+  xmlns:tableau="http://java.sun.com/jsf/composite/tableau"
+  xmlns:liferay-ui="http://liferay.com/faces/ui">
+  <h:head />
+  <h:body>
+    <ui:composition template="template.xhtml">
+      <ui:define name="content">
+        <ui:repeat var="item" value="#{menu.items}">
+          <h:panelGroup styleClass="tjm-menu-item" layout="block">
+            <a href="#{item.actionUrl}">#{item.label}</a>
+          </h:panelGroup>
+        </ui:repeat>
+      </ui:define>
+    </ui:composition>
+
+  </h:body>
+</f:view>

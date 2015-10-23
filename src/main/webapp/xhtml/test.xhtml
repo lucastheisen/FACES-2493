@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:alloy="http://liferay.com/faces/alloy"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:portlet="http://java.sun.com/portlet_2_0"
+  xmlns:ui="http://java.sun.com/jsf/facelets">
+  
+<ui:composition template="#{viz.exclusive ? 'exclusive.xhtml' : 'portlet.xhtml'}">
+  <ui:define name="page-title">#{param.label}</ui:define>
+  
+  <ui:define name="title">
+    <a href="#{param.returnUrl}"> <alloy:icon
+        name="circle-arrow-left" />
+    </a>
+    <span class="portlet-title-text">#{param.label}</span>
+  </ui:define>
+
+  <ui:define name="menu">
+    <portlet:actionURL copyCurrentRenderParameters="true"
+      windowState="exclusive" var="exclusiveUrl" />
+    <h:panelGroup rendered="#{viz.exclusive}">
+      <a href="#{viz.regularUrl}"> <alloy:icon name="resize-small" />
+      </a>
+    </h:panelGroup>
+    <h:panelGroup rendered="#{!viz.exclusive}">
+      <a href="#{viz.exclusiveUrl}"> <alloy:icon name="resize-full" />
+      </a>
+    </h:panelGroup>
+  </ui:define>
+
+  <ui:define name="content">
+    <h:panelGroup id="testJsfPortlet" class="tjp-view">
+      <span> I RULE! </span>
+    </h:panelGroup>
+  </ui:define>
+</ui:composition>
+</html>

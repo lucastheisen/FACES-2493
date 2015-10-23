@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head />
+  <h:body>
+    <ui:insert name="resources" />
+
+    <h:panelGroup styleClass="tjp-container" layout="block">
+      <h:panelGroup id="headerContainer"
+        styleClass="tjp-header-container" layout="block">
+        <ui:insert name="header"></ui:insert>
+      </h:panelGroup>
+      <h:panelGroup id="contentContainer"
+        styleClass="tjp-content-container" layout="block">
+        <ui:insert name="content">Whoops, you should not be seeing this...</ui:insert>
+      </h:panelGroup>
+      <h:panelGroup id="footerContainer"
+        styleClass="tjp-footer-container" layout="block">
+        <ui:insert name="footer">
+          <h:messages id="messages" globalOnly="true" showDetails="true" />
+        </ui:insert>
+      </h:panelGroup>
+    </h:panelGroup>
+  </h:body>
+</f:view>

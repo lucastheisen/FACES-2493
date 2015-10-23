@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:alloy="http://liferay.com/faces/alloy"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition>
+  <alloy:head />
+
+  <alloy:body>
+    <ui:insert name="resources" />
+
+    <!-- Similar to theme portlet.vm -->
+    <section id="portlet_#{liferay.themeDisplay.portletDisplay.id}"
+      class="portlet">
+      <header class="portlet-topper">
+        <h1 class="portlet-title">
+          <ui:insert name="title">TITLE</ui:insert>
+        </h1>
+        <menu class="portlet-topper-toolbar" type="toolbar"
+          id="portlet-topper-toolbar_#{liferay.themeDisplay.portletDisplay.id}">
+          <ui:insert name="menu">MENU</ui:insert>
+        </menu>
+      </header>
+      <div class="portlet-content">
+        <ui:insert name="content">Whoops, you should not be seeing this...</ui:insert>
+      </div>
+    </section>
+  </alloy:body>
+</ui:composition>
+</html>
