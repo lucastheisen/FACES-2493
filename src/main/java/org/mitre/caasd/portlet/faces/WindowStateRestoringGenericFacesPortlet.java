@@ -128,14 +128,15 @@ public class WindowStateRestoringGenericFacesPortlet extends GenericFacesPortlet
             portletURL.setCopyCurrentRenderParameters( true );
 
             try {
-                portletURL.setWindowState( windowStateFrom( themeDisplay ) );
+                WindowState windowState = windowStateFrom( themeDisplay );
+                if ( windowState == null ) {
+                    LOGGER.debug( "unable to find configured window state, default to MAXIMIZED" );
+                    windowState = WindowState.MAXIMIZED;
+                }
+                portletURL.setWindowState( windowState );
             }
             catch ( SystemException e ) {
-                if ( LOGGER.isDebugEnabled() ) {
-                    LOGGER.debug( "unable to find specified window state: {}",
-                            e.getMessage() );
-                }
-                portletURL.setWindowState( WindowState.MAXIMIZED );
+                throw new PortletException( e );
             }
 
             LOGGER.info( "naked action request, redirecting to {}", portletURL );
