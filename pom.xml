@@ -5,7 +5,7 @@
 
   <groupId>org.mitre.caasd</groupId>
   <artifactId>test-jsf-portlet</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1.EE-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>Test JSF Portlet</name>
@@ -16,7 +16,7 @@
     <java.version>1.7</java.version>
 
     <jsf.version>2.1.29</jsf.version>
-    <liferay.version>6.2.3</liferay.version>
+    <liferay.version>6.2.10.10</liferay.version>
     <liferay-faces.version>3.2.5-ga6</liferay-faces.version>
     <portlet.version>2.0</portlet.version>
     <slf4j.version>1.7.7</slf4j.version>
